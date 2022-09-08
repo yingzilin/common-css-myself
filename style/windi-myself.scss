@@ -166,7 +166,7 @@
 
 
 @function rem($px) {
-    @return $px*1;
+    @return $px*1px;
 }
 
 /*内外间距*/
