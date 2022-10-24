@@ -187,8 +187,11 @@
 
 
 
-@function rem($px) {
-    @return $px*1;
+@function pxRem($number) {
+    @return $number*1px;
+}
+@function rem($number) {
+    @return $number*1rpx;
 }
 
 /*内外间距*/
@@ -196,7 +199,35 @@ $x: l, r, t, b, lr, tb;
 
 @for $i from 1 through 300 {
     @each $var in $x {
-        .p#{$var}-#{$i} {
+        .p#{$var}-#{$i}px {
+            @if $var ==l {
+                padding-left: pxRem($i);
+            }
+
+            @if $var ==r {
+                padding-right: pxRem($i);
+            }
+
+            @if $var ==t {
+                padding-top: pxRem($i);
+            }
+
+            @if $var ==b {
+                padding-bottom: pxRem($i);
+            }
+
+            @if $var ==lr {
+                padding-left: pxRem($i);
+                padding-right: pxRem($i);
+            }
+
+            @if $var ==tb {
+                padding-top: pxRem($i);
+                padding-bottom: pxRem($i);
+            }
+        }
+
+        .p#{$var}-#{$i}rpx {
             @if $var ==l {
                 padding-left: rem($i);
             }
@@ -224,7 +255,35 @@ $x: l, r, t, b, lr, tb;
             }
         }
 
-        .m#{$var}-#{$i} {
+        .m#{$var}-#{$i}px {
+            @if $var ==l {
+                margin-left: pxRem($i);
+            }
+
+            @if $var ==r {
+                margin-right: pxRem($i);
+            }
+
+            @if $var ==t {
+                margin-top: pxRem($i);
+            }
+
+            @if $var ==b {
+                margin-bottom: pxRem($i);
+            }
+
+            @if $var ==lr {
+                margin-left: pxRem($i);
+                margin-right: pxRem($i);
+            }
+
+            @if $var ==tb {
+                margin-top: pxRem($i);
+                margin-bottom: pxRem($i);
+            }
+        }
+
+        .m#{$var}-#{$i}rpx {
             @if $var ==l {
                 margin-left: rem($i);
             }
