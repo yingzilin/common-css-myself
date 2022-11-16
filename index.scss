@@ -1,5 +1,13 @@
-@import './style/windi-myself.scss';
+@import "./style/windi-myself.scss";
 
-.border{
-    border: solid 1px red;
+.border {
+  border: solid 1px red;
+}
+
+.width-full {
+  width: 100%;
+}
+
+.height-full {
+  height: 100%;
 }
