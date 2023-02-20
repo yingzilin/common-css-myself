@@ -155,6 +155,10 @@
   -ms-flex-align: stretch;
 }
 
+.wh {
+  white-space: nowrap;
+}
+
 .object-contain {
   -o-object-fit: contain;
      object-fit: contain;
@@ -212,12 +216,37 @@
 
 
 
+
 @function pxRem($number) {
   @return $number*1px;
 }
 
 @function rem($number) {
   @return $number*1rpx;
+}
+
+// 宽高
+@for $n from 1 through 500 {
+  .w-#{$n}px {
+    width: pxRem($n);
+  }
+  .h-#{$n}px {
+    height: pxRem($n);
+  }
+
+  .w-#{$n}rpx {
+    width: rem($n);
+  }
+  .h-#{$n}rpx {
+    height: rem($n);
+  }
+
+  .w-#{$n} {
+    width: $n * 1%;
+  }
+  .h-#{$n} {
+    height: $n * 1%;
+  }
 }
 
 
